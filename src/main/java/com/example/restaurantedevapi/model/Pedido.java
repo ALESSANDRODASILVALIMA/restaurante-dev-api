@@ -30,5 +30,48 @@ public class Pedido {
 
     @OneToOne(mappedBy = "pedido")
     private Pagamento pagamento;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+    
+    // Getters e setters
     
 }
+

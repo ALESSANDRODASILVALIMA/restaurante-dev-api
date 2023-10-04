@@ -1,33 +1,23 @@
-package com.example.restaurantedevapi.model;
+package com.example.restaurantedevapi.dto;
 
-import com.example.restaurantedevapi.dto.UsuarioDTO;
+import com.example.restaurantedevapi.model.Usuario;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UsuarioDTO {
     private int id;
     private String nome;
     private String endereco;
     private String telefone;
     private String email;
 
-    
-
-
-    public UsuarioDTO toUsuarioDTO() {
-        UsuarioDTO usuarioDTO = new UsuarioDTO();
-        usuarioDTO.setId(this.id);
-        usuarioDTO.setNome(this.nome);
-        usuarioDTO.setEndereco(this.endereco);
-        usuarioDTO.setTelefone(this.telefone);
-        usuarioDTO.setEmail(this.email);
-        return usuarioDTO;
+        // Construtor que cria um objeto Usuario a partir de um UsuarioDTO
+    public Usuario toUsuario() {
+        Usuario usuario = new Usuario();
+        //usuario.setId(this.id);
+        usuario.setNome(this.nome);
+        usuario.setEndereco(this.endereco);
+        usuario.setTelefone(this.telefone);
+        usuario.setEmail(this.email);
+        return usuario;
     }
 
     public int getId() {
@@ -60,4 +50,7 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    // Getters e setters
+    
 }
